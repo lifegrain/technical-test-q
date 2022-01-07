@@ -1,0 +1,5 @@
+SELECT persons.name,
+CAST(items.price as int) * transactions.total as total_price
+FROM transactions
+RIGHT JOIN persons on transactions.person_id = persons.id
+RIGHT JOIN items on transactions.item_id = items.id

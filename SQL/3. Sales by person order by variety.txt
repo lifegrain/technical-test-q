@@ -1,0 +1,6 @@
+SELECT persons.name
+FROM transactions
+RIGHT JOIN persons on transactions.person_id = persons.id
+RIGHT JOIN items on transactions.item_id = items.id
+GROUP BY persons.name
+ORDER BY COUNT(Distinct items.name) DESC

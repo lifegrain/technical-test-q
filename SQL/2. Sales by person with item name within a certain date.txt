@@ -1,0 +1,5 @@
+SELECT persons.name, items.name
+FROM transactions
+RIGHT JOIN persons on transactions.person_id = persons.id
+RIGHT JOIN items on transactions.item_id = items.id
+WHERE date BETWEEN (timestamp 'January 1 2020') AND (timestamp 'June 25 2020')
